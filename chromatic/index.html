@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHROMATIC - 色記憶パズルゲーム</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 32px 16px;
+            color: #F0F0FF;
+            line-height: 1.8;
+            background: #0A0A0F;
+            background-image:
+                radial-gradient(circle at 20% 10%, rgba(160,160,255,0.08), transparent 50%),
+                radial-gradient(circle at 80% 90%, rgba(255,60,60,0.06), transparent 50%);
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 4px;
+            color: #fff;
+            letter-spacing: 4px;
+            font-family: -apple-system, 'SF Mono', monospace;
+            font-weight: 900;
+        }
+        .subtitle { color: #8888AA; font-size: 1rem; margin-bottom: 32px; letter-spacing: 1px; }
+
+        /* パネルプレビュー */
+        .panels-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            max-width: 280px;
+            margin: 0 auto 40px;
+        }
+        .panel {
+            aspect-ratio: 1;
+            border-radius: 18px;
+        }
+        .panel-red    { background: radial-gradient(circle at 35% 30%, #FF6B6B, #CC2222); box-shadow: 0 0 24px rgba(255,60,60,0.5); }
+        .panel-green  { background: radial-gradient(circle at 35% 30%, #4AE580, #1A8C3A); box-shadow: 0 0 24px rgba(40,220,100,0.5); }
+        .panel-blue   { background: radial-gradient(circle at 35% 30%, #4A90FF, #1A4ACC); box-shadow: 0 0 24px rgba(60,120,255,0.5); }
+        .panel-yellow { background: radial-gradient(circle at 35% 30%, #FFD700, #CC9000); box-shadow: 0 0 24px rgba(255,210,0,0.5); }
+
+        /* 特徴リスト */
+        .features { list-style: none; padding: 0; margin: 0; }
+        .features li {
+            margin: 14px 0;
+            padding: 18px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+        }
+        .features li strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+        .features li span {
+            color: #aaaacc;
+            font-size: 0.95rem;
+        }
+
+        /* モードハイライト */
+        .modes {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            margin: 24px 0 8px;
+        }
+        .mode-tag {
+            flex: 1;
+            text-align: center;
+            padding: 10px 8px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+        }
+        .mode-normal { color: #4A90FF; background: rgba(74,144,255,0.10); border: 1px solid rgba(74,144,255,0.3); }
+        .mode-fast   { color: #FFD700; background: rgba(255,215,0,0.10); border: 1px solid rgba(255,215,0,0.3); }
+        .mode-insane { color: #FF3C3C; background: rgba(255,60,60,0.12); border: 1px solid rgba(255,60,60,0.35); }
+
+        .links { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .links a {
+            color: #A0A0FF;
+            margin-right: 16px;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        .links a:hover { text-decoration: underline; }
+
+        footer {
+            margin-top: 40px;
+            color: #555577;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        footer a { color: #8888AA; }
+    </style>
+</head>
+<body>
+    <h1>CHROMATIC</h1>
+    <p class="subtitle">色記憶パズルゲーム</p>
+
+    <div class="panels-preview">
+        <div class="panel panel-red"></div>
+        <div class="panel panel-green"></div>
+        <div class="panel panel-blue"></div>
+        <div class="panel panel-yellow"></div>
+    </div>
+
+    <ul class="features">
+        <li>
+            <strong>シンプルな色記憶パズル</strong>
+            <span>4色のパネルが光る順番を覚えて、同じ順番でタップ。正解するたびにシーケンスが延びていきます。</span>
+        </li>
+        <li>
+            <strong>3つの難易度モード</strong>
+            <span>選んだモードによって開始時の速度が変わります。速度はラウンドが進むほど5段階で加速。</span>
+            <div class="modes">
+                <div class="mode-tag mode-normal">NORMAL</div>
+                <div class="mode-tag mode-fast">FAST</div>
+                <div class="mode-tag mode-insane">INSANE</div>
+            </div>
+        </li>
+        <li>
+            <strong>Game Center リーダーボード</strong>
+            <span>難易度別に世界中のプレイヤーとスコアを競えます。連続プレイストリーク機能も搭載。</span>
+        </li>
+        <li>
+            <strong>色覚サポートモード</strong>
+            <span>パネルにR / G / B / Y の記号を重ねて表示。色の判別が苦手な方でも快適にプレイできます。</span>
+        </li>
+        <li>
+            <strong>広告削除オプション</strong>
+            <span>サブスクリプションなし。一度の購入で広告を永久に非表示にできます。</span>
+        </li>
+    </ul>
+
+    <div class="links">
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="support.html">サポート</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Felix Apps</p>
+        <p>Contact: <a href="mailto:felixapps2026@outlook.jp">felixapps2026@outlook.jp</a></p>
+    </footer>
+</body>
+</html>
