@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoutineReel - ルーティン動画を自動作成</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; color: #1a1a1a; background: #fafafa; line-height: 1.7; }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #ff6b35 0%, #ff3d7f 100%); color: #fff; text-align: center; padding: 64px 24px 80px; }
+        .hero h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+        .hero p { font-size: 1.1rem; opacity: 0.92; max-width: 480px; margin: 0 auto 32px; }
+        .badge-wrap { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .badge { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; padding: 6px 16px; font-size: 0.85rem; font-weight: 600; }
+        .store-btn { display: inline-block; background: #fff; color: #ff6b35; font-weight: 700; font-size: 1rem; padding: 14px 36px; border-radius: 50px; text-decoration: none; margin-top: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .store-btn:hover { opacity: 0.9; }
+
+        /* Container */
+        .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+
+        /* Features */
+        .section { padding: 56px 0; }
+        .section h2 { font-size: 1.5rem; font-weight: 700; text-align: center; margin-bottom: 36px; }
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 480px) { .features { grid-template-columns: 1fr; } }
+        .feature-card { background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+        .feature-icon { font-size: 2rem; margin-bottom: 10px; }
+        .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+        .feature-card p { font-size: 0.9rem; color: #555; }
+
+        /* Steps */
+        .steps-bg { background: #fff3ef; }
+        .steps { list-style: none; counter-reset: step; }
+        .steps li { counter-increment: step; display: flex; gap: 16px; align-items: flex-start; margin-bottom: 24px; }
+        .steps li::before { content: counter(step); min-width: 36px; height: 36px; background: linear-gradient(135deg, #ff6b35, #ff3d7f); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; }
+        .steps li h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .steps li p { font-size: 0.9rem; color: #555; }
+
+        /* Pro */
+        .pro-card { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; border-radius: 20px; padding: 36px; text-align: center; }
+        .pro-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
+        .pro-card .sub { color: rgba(255,255,255,0.7); margin-bottom: 24px; font-size: 0.95rem; }
+        .pro-list { list-style: none; text-align: left; max-width: 300px; margin: 0 auto 28px; }
+        .pro-list li { padding: 6px 0; font-size: 0.95rem; }
+        .pro-list li::before { content: "✓ "; color: #ff6b35; font-weight: 700; }
+        .pro-price { font-size: 0.95rem; color: rgba(255,255,255,0.7); }
+
+        /* Links */
+        .links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 36px 0; border-top: 1px solid #e8e8e8; }
+        .links a { color: #555; text-decoration: none; font-size: 0.9rem; }
+        .links a:hover { color: #ff6b35; }
+
+        footer { text-align: center; padding: 20px; color: #aaa; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="container">
+            <h1>RoutineReel</h1>
+            <p>朝活・筋トレ・夜のルーティン動画を<br>撮るだけで自動作成</p>
+            <div class="badge-wrap">
+                <span class="badge">無料ダウンロード</span>
+                <span class="badge">iOS 18.0+</span>
+                <span class="badge">日本語対応</span>
+            </div>
+            <br>
+            <a href="https://apps.apple.com/jp/app/id_REPLACE_WITH_APP_ID" class="store-btn">App Store でダウンロード</a>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="section">
+        <div class="container">
+            <h2>できること</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>ステップ別に撮影</h3>
+                    <p>ルーティンのステップを登録して、カウントダウンに合わせて1クリップずつ撮影。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✂️</div>
+                    <h3>自動クリップ結合</h3>
+                    <p>撮影が終わったら自動でクリップを結合。テロップ付きの縦型動画が完成。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📲</div>
+                    <h3>そのままSNSへ</h3>
+                    <p>完成動画をカメラロールに保存してTikTok・Instagram Reelsにすぐ投稿。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔁</div>
+                    <h3>ルーティンを記録</h3>
+                    <p>毎日続けるとその日の撮影済みバッジが付き、習慣の積み上がりが見える。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How to use -->
+    <div class="section steps-bg">
+        <div class="container">
+            <h2>使い方</h2>
+            <ol class="steps">
+                <li>
+                    <div>
+                        <h3>ルーティンを作る</h3>
+                        <p>朝・夜・運動などのプリセットから選ぶか、自分でステップを自由に設定。</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>ステップごとに撮影</h3>
+                        <p>カウントダウンに合わせてカメラを向けるだけ。秒数はステップごとに調整可。</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>動画を書き出し</h3>
+                        <p>撮影後にプレビューを確認して書き出し。クリップの並び替えも可能。</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>SNSにシェア</h3>
+                        <p>カメラロールに保存された動画をそのままTikTokやReelsにアップ。</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Pro -->
+    <div class="section">
+        <div class="container">
+            <div class="pro-card">
+                <h3>RoutineReel Pro</h3>
+                <p class="sub">もっと自由に、もっときれいに</p>
+                <ul class="pro-list">
+                    <li>透かし（ウォーターマーク）なし</li>
+                    <li>動画の保存本数が無制限</li>
+                    <li>広告非表示</li>
+                </ul>
+                <p class="pro-price">月額 ¥480 / 年額 ¥3,800（7日間無料トライアル付き）</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Links -->
+    <div class="container">
+        <div class="links">
+            <a href="privacy-policy.html">プライバシーポリシー</a>
+            <a href="terms.html">利用規約</a>
+            <a href="support.html">サポート</a>
+            <a href="mailto:felixapps2026@outlook.jp">お問い合わせ</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Felix Apps. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
