@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランスタ - みんなの推しランキング投票</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            max-width: 700px; margin: 0 auto; padding: 32px 16px;
+            color: #EDE8F5; line-height: 1.8; background: #14101C;
+            background-image: radial-gradient(circle at 80% 0%, rgba(196,75,255,0.14), transparent 55%);
+            min-height: 100vh;
+        }
+        h1 { font-size: 2rem; margin-bottom: 4px; color: #fff; font-weight: 900; letter-spacing: 1px; }
+        .subtitle { color: #A79BBD; font-size: 1rem; margin-bottom: 32px; }
+        .podium { display: flex; align-items: flex-end; gap: 10px; margin: 0 0 40px; }
+        .place {
+            flex: 1; text-align: center; border-radius: 12px 12px 0 0; padding: 12px 6px;
+            font-weight: 800; color: #14101C;
+        }
+        .p1 { background: linear-gradient(180deg,#FFD86B,#FFB020); height: 108px; }
+        .p2 { background: linear-gradient(180deg,#DCD6E8,#A79BBD); height: 84px; }
+        .p3 { background: linear-gradient(180deg,#E0A177,#B9764C); height: 68px; }
+        .features { list-style: none; padding: 0; margin: 0; }
+        .features li {
+            margin: 14px 0; padding: 18px 20px; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.10); border-radius: 14px;
+        }
+        .features li strong { color: #fff; display: block; margin-bottom: 6px; font-size: 1.05rem; }
+        .features li span { color: #B6ACC6; font-size: 0.95rem; }
+        .store { display: inline-block; margin-top: 32px; padding: 14px 28px; border-radius: 12px;
+            background: #C44BFF; color: #fff; font-weight: 800; text-decoration: none; }
+        .links { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
+        .links a { color: #D79BFF; margin-right: 16px; font-size: 0.9rem; text-decoration: none; }
+        .links a:hover { text-decoration: underline; }
+        footer { margin-top: 40px; color: #6C6280; font-size: 0.85rem; text-align: center; }
+        footer a { color: #A79BBD; }
+    </style>
+</head>
+<body>
+    <h1>ランスタ</h1>
+    <p class="subtitle">みんなの推しランキング投票 ― 作って、投票して、共有する</p>
+
+    <div class="podium">
+        <div class="place p2">2</div>
+        <div class="place p1">1</div>
+        <div class="place p3">3</div>
+    </div>
+
+    <ul class="features">
+        <li>
+            <strong>ランキングを作る</strong>
+            <span>タイトル・選択肢・期間を決めるだけの3ステップ。アニメ・スポーツ・音楽・生活・グルメ・ゲームなど、カテゴリも豊富です。</span>
+        </li>
+        <li>
+            <strong>投票する</strong>
+            <span>1位だけを選ぶシングル投票と、1位から3位まで選ぶ TOP3 投票。気軽に参加できます。</span>
+        </li>
+        <li>
+            <strong>結果を共有する</strong>
+            <span>あなたが作ったランキングが、知らない誰かの「あるある！」を呼びます。</span>
+        </li>
+        <li>
+            <strong>暇つぶしにも、推し活にも</strong>
+            <span>通勤中の時間つぶしに、推しの議論に、友達との話題作りに。</span>
+        </li>
+    </ul>
+
+    <a class="store" href="https://apps.apple.com/jp/app/id6761674834">App Store で見る</a>
+
+    <div class="links">
+        <a href="privacy-policy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="support.html">サポート</a>
+        <a href="tokushoho.html">特定商取引法に基づく表記</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Felix Apps</p>
+        <p>Contact: <a href="mailto:felixapps2026@outlook.jp">felixapps2026@outlook.jp</a></p>
+    </footer>
+</body>
+</html>
